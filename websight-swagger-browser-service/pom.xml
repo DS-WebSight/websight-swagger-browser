@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>websight-swagger-browser-service</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <build>
         <plugins>
@@ -55,6 +55,7 @@
 
 
   <scm>
-    <tag>1.0.0</tag>
+    <tag>1.0.1</tag>
+    <developerConnection>scm:git:ssh://git@192.168.1.146:7999/ws/websight-swagger-browser.git</developerConnection>
   </scm>
 </project>

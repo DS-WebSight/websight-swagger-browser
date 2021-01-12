@@ -1,1 +1,1 @@
-export const SWAGGER_BROWSER_ROOT_PATH = '/apps/websight-swagger-browser.html';
+export const SWAGGER_BROWSER_ROOT_PATH = '/apps/apidocs';
