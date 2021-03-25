@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.ds.websight</groupId>
+    <artifactId>websight-bundle-parent</artifactId>
+    <version>2</version>
+    <relativePath></relativePath>
+  </parent>
+  <artifactId>websight-swagger-browser-service</artifactId>
+  <version>1.0.2</version>
+  <name>WebSight Swagger Browser Service</name>
+  <description>Swagger Browser Service module</description>
+  <url>https://github.com/DS-WebSight/websight-swagger-browser</url>
+  <organization>
+    <name>Dynamic Solutions sp. z o.o. sp. k.</name>
+    <url>https://ds.pl</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License v3.0</name>
+      <url>https://github.com/DS-WebSight/websight-swagger-browser/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Michal Cukierman</name>
+      <email>michal.cukierman@ds.pl</email>
+      <organization>Dynamic Solutions</organization>
+      <organizationUrl>https://www.ds.pl/</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:ssh://github.com:DS-WebSight/websight-swagger-browser.git</connection>
+    <developerConnection>scm:git:ssh://github.com:DS-WebSight/websight-swagger-browser.git</developerConnection>
+    <url>https://github.com/DS-WebSight/websight-swagger-browser</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>pl.ds.websight</groupId>
+      <artifactId>websight-rest-framework</artifactId>
+      <version>1.0.2</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component.annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.framework</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-baseline-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <licenseName>agpl_v3</licenseName>
+          <licenseFile>${project.basedir}/LICENSE</licenseFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

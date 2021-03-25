@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.ds.websight</groupId>
+    <artifactId>websight-frontend-parent</artifactId>
+    <version>2</version>
+    <relativePath></relativePath>
+  </parent>
+  <artifactId>websight-swagger-browser-view</artifactId>
+  <version>1.0.2</version>
+  <name>WebSight Swagger Browser View</name>
+  <description>Swagger Browser View module</description>
+  <url>https://github.com/DS-WebSight/websight-swagger-browser</url>
+  <organization>
+    <name>Dynamic Solutions sp. z o.o. sp. k.</name>
+    <url>https://ds.pl</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License v3.0</name>
+      <url>https://github.com/DS-WebSight/websight-swagger-browser/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Michal Cukierman</name>
+      <email>michal.cukierman@ds.pl</email>
+      <organization>Dynamic Solutions</organization>
+      <organizationUrl>https://www.ds.pl/</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:ssh://github.com:DS-WebSight/websight-swagger-browser.git</connection>
+    <developerConnection>scm:git:ssh://github.com:DS-WebSight/websight-swagger-browser.git</developerConnection>
+    <url>https://github.com/DS-WebSight/websight-swagger-browser</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component.annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pl.ds.websight</groupId>
+      <artifactId>websight-fragments-registry</artifactId>
+      <version>1.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.servlets.annotations</artifactId>
+      <version>1.2.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.api</artifactId>
+      <version>2.18.4</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <resources>
+      <resource>
+        <directory>target/dist</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>npm run lint</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run lint</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm run babel</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run babel</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-baseline-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <licenseName>agpl_v3</licenseName>
+          <licenseFile>${project.basedir}/LICENSE</licenseFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
